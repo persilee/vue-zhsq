@@ -132,10 +132,9 @@ export default {
   }
   .aside-left,
   .aside-right {
-    margin-top: -8%;
     position: relative;
     width: 100%;
-    height: 110%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,7 +163,7 @@ export default {
       }
       li {
         height: 14%;
-        margin: 9% 0;
+        margin: 6% 0;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 50% 50%;
@@ -199,7 +198,6 @@ export default {
         background-position: 50% 50%;
         transform: scale(0.96);
         transition: 0.6s;
-        margin-top: -3.6%;
       }
       .fx1 {
         background-image: url(../assets/images/index2-fx1.png);
@@ -229,8 +227,8 @@ export default {
     .equipment-box {
       width: 100%;
       height: 53.8%;
-      padding-left: 0.56rem;
-      padding-top: 0.36rem;
+      padding-left: 0.96rem;
+      padding-top: 0.66rem;
       .equipment-item {
         width: 66%;
         height: 13%;
@@ -258,8 +256,8 @@ export default {
           background-image: url(../assets/images/i-index2-rlsb-h.png);
         }
         .rotating {
-          top: 46%;
-          right: -0.6%;
+          top: 44%;
+          right: 3%;
         }
       }
       .cldz {
@@ -268,8 +266,8 @@ export default {
           background-image: url(../assets/images/i-index2-cldz-h.png);
         }
         .rotating {
-          top: 46%;
-          right: -0.6%;
+          top: 44%;
+          right: 3%;
         }
       }
       .sjrd {
@@ -278,8 +276,8 @@ export default {
           background-image: url(../assets/images/i-index2-sjrd-h.png);
         }
         .rotating {
-          top: 46%;
-          right: -0.6%;
+          top: 44%;
+          right: 3%;
         }
       }
       .mjsb {
@@ -288,8 +286,8 @@ export default {
           background-image: url(../assets/images/i-index2-mjsb-h.png);
         }
         .rotating {
-          top: 46%;
-          right: -0.6%;
+          top: 44%;
+          right: 3%;
         }
       }
       .jksb {
@@ -298,8 +296,8 @@ export default {
           background-image: url(../assets/images/i-index2-jksb-h.png);
         }
         .rotating {
-          top: 46%;
-          right: -0.6%;
+          top: 44%;
+          right: 3%;
         }
       }
     }
