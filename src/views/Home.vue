@@ -22,7 +22,14 @@
         </el-aside>
         <el-main></el-main>
         <el-aside width="23%">
-          <div class="aside-right"></div>
+          <div class="aside-right">
+            <div class="dimension-box">
+              <div class="dimension-item fx1"></div>
+              <div class="dimension-item fx2"></div>
+              <div class="dimension-item fx3"></div>
+              <div class="dimension-item fx4"></div>
+            </div>
+          </div>
         </el-aside>
       </el-container>
     </div>
@@ -65,7 +72,6 @@ export default {
     position: relative;
     width: 100%;
     height: 110%;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,7 +96,7 @@ export default {
       ul {
         width: 79%;
         height: 100%;
-        padding-left: 8%;
+        padding-left: 5%;
       }
       li {
         width: 3rem;
@@ -114,6 +120,48 @@ export default {
       }
       .menu-item-sqfw {
         background-image: url(../assets/images/more-platform-sqfw.png);
+      }
+    }
+    .dimension-box {
+      width: 100%;
+      height: 36%;
+      margin-bottom: 10%;
+      display: flex;
+      flex-wrap: wrap;
+      padding-right: 26px;
+      .dimension-item {
+        width: 46%;
+        height: 46%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        transform: scale(0.96);
+        transition: 0.6s;
+        margin-top: -6%;
+      }
+      .fx1 {
+        background-image: url(../assets/images/index2-fx1.png);
+        &:hover {
+          background-image: url(../assets/images/index2-fx1-h.png);
+        }
+      }
+      .fx2 {
+        background-image: url(../assets/images/index2-fx2.png);
+        &:hover {
+          background-image: url(../assets/images/index2-fx2-h.png);
+        }
+      }
+      .fx3 {
+        background-image: url(../assets/images/index2-fx3.png);
+        &:hover {
+          background-image: url(../assets/images/index2-fx3-h.png);
+        }
+      }
+      .fx4 {
+        background-image: url(../assets/images/index2-fx4.png);
+        &:hover {
+          background-image: url(../assets/images/index2-fx4-h.png);
+        }
       }
     }
   }
