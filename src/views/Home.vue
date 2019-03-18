@@ -3,24 +3,16 @@
     <div class="header">
       <ul class="header-nav">
         <li>
-          <a href="#">
-            <i class="iconfont icon-artboard9"></i> 警务快搜
-          </a>
+          <a href="#"><i class="iconfont icon-artboard9"></i> 警务快搜</a>
         </li>
         <li>
-          <a href="#">
-            <i class="iconfont icon-user-name"></i> admin
-          </a>
+          <a href="#"><i class="iconfont icon-user-name"></i> admin</a>
         </li>
         <li>
-          <router-link to="/login">
-            <i class="iconfont icon-zhuxiao"></i> 注销
-          </router-link>
+          <router-link to="/login"><i class="iconfont icon-zhuxiao"></i> 注销</router-link>
         </li>
         <li>
-          <a href="#">
-            <i class="iconfont icon-system"></i> 系统管理
-          </a>
+          <a href="#"><i class="iconfont icon-system"></i> 系统管理</a>
         </li>
       </ul>
     </div>
