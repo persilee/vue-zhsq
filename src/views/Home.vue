@@ -3,16 +3,24 @@
     <div class="header">
       <ul class="header-nav">
         <li>
-          <a href="#"><i class="iconfont icon-artboard9"></i> 警务快搜</a>
+          <a href="#">
+            <i class="iconfont icon-artboard9"></i> 警务快搜
+          </a>
         </li>
         <li>
-          <a href="#"><i class="iconfont icon-user-name"></i> admin</a>
+          <a href="#">
+            <i class="iconfont icon-user-name"></i> admin
+          </a>
         </li>
         <li>
-          <router-link to="/login"><i class="iconfont icon-zhuxiao"></i> 注销</router-link>
+          <router-link to="/login">
+            <i class="iconfont icon-zhuxiao"></i> 注销
+          </router-link>
         </li>
         <li>
-          <a href="#"><i class="iconfont icon-system"></i> 系统管理</a>
+          <a href="#">
+            <i class="iconfont icon-system"></i> 系统管理
+          </a>
         </li>
       </ul>
     </div>
@@ -20,10 +28,22 @@
       <el-container>
         <el-aside width="25.6%">
           <div class="aside-left">
-            <div class="total-box">实有人口</div>
-            <div class="total-box">实有车辆</div>
-            <div class="total-box">实有房屋</div>
-            <div class="total-box">实有单位</div>
+            <div class="total-box">
+              <div class="title">实有人口</div>
+              <div class="count syrk"></div>
+            </div>
+            <div class="total-box">
+              <div class="title">实有车辆</div>
+              <div class="count sycl">{{ counts.count_sycl }}</div>
+            </div>
+            <div class="total-box">
+              <div class="title">实有房屋</div>
+              <div class="count syfw">{{ counts.count_syfw }}</div>
+            </div>
+            <div class="total-box">
+              <div class="title">实有单位</div>
+              <div class="count sydw">{{ counts.count_sydw }}</div>
+            </div>
             <div class="menu-box">
               <ul>
                 <li class="menu-item-zhxf"></li>
@@ -35,7 +55,16 @@
             </div>
           </div>
         </el-aside>
-        <el-main></el-main>
+        <el-main>
+          <iframe
+            src="http://192.168.1.173:54655"
+            width="100%"
+            height="100%"
+            scrolling="no"
+            frameborder="0"
+            style="margin-top: -4%;"
+          ></iframe>
+        </el-main>
         <el-aside width="23%">
           <div class="aside-right">
             <div class="dimension-box">
@@ -69,11 +98,40 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import "../assets/js/count.js";
 
 export default {
   name: "home",
-  components: {}
+  data: function() {
+    return {
+      counts: {
+        count_syrk: 666,
+        count_sycl: 365,
+        count_syfw: 163,
+        count_sydw: 66
+      }
+    };
+  },
+  methods: {
+  },
+  mounted() {
+    $('.total-box .count.syrk').numberRock({
+        speed: 20,
+        count: this.counts.count_syrk
+    });
+    $('.total-box .count.sycl').numberRock({
+        speed: 10,
+        count: this.counts.count_sycl
+    });
+    $('.total-box .count.syfw').numberRock({
+        speed: 10,
+        count: this.counts.count_syfw
+    });
+    $('.total-box .count.sydw').numberRock({
+        speed: 10,
+        count: this.counts.count_sydw
+    });
+  }
 };
 </script>
 <style scoped lang="scss">
@@ -139,6 +197,18 @@ export default {
       height: 4.6%;
       color: #acbaeb;
       font-weight: bold;
+      display: flex;
+      .title {
+        flex-grow: 1;
+      }
+      .count {
+        font-family: Digital-7 Mono;
+        font-size: 0.56rem;
+        background: linear-gradient(to bottom, #fffb00, #ff7200);
+        background-clip: text;
+        color: transparent;
+        align-self: flex-end;
+      }
     }
     .menu-box {
       background: url(../assets/images/menu-bg.png) no-repeat;
