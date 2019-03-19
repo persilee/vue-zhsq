@@ -28,9 +28,10 @@
       <el-container>
         <el-aside width="25.6%">
           <div class="aside-left">
-            <div class="total-box">
+            <div class="total-box" @click="isShowDia = true">
               <div class="title">实有人口</div>
               <div class="count syrk"></div>
+              <popup :dialogVisible="isShowDia"></popup>
             </div>
             <div class="total-box">
               <div class="title">实有车辆</div>
@@ -98,12 +99,17 @@
 </template>
 
 <script>
-import "../assets/js/count.js";
+import '../assets/js/count.js';
+import popup from '../components/Popup'
 
 export default {
   name: "home",
+  components: {
+    popup
+  },
   data: function() {
     return {
+      isShowDia: false,
       counts: {
         count_syrk: 666,
         count_sycl: 365,
@@ -113,6 +119,9 @@ export default {
     };
   },
   methods: {
+    log() {
+      console.log('aaa')
+    }
   },
   mounted() {
     $('.total-box .count.syrk').numberRock({
@@ -198,6 +207,7 @@ export default {
       color: #acbaeb;
       font-weight: bold;
       display: flex;
+      cursor: pointer;
       .title {
         flex-grow: 1;
       }
