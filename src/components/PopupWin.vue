@@ -29,9 +29,7 @@ export default {
     }
   },
   methods: {
-    winVisble() {
-      this.$emit("winVisble");
-    }
+    
   }
 };
 </script>

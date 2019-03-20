@@ -57,14 +57,11 @@
           </div>
         </el-aside>
         <el-main>
-          <iframe
-            src="http://192.168.1.173:54655"
-            width="100%"
-            height="100%"
-            scrolling="no"
-            frameborder="0"
-            style="margin-top: -4%;"
-          ></iframe>
+          <transition name="move" mode="out-in">
+            <keep-alive>
+              <router-view></router-view>
+            </keep-alive>
+          </transition>
         </el-main>
         <el-aside width="23%">
           <div class="aside-right">

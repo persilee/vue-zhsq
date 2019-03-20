@@ -10,8 +10,19 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
+			redirect: '/krpano',
+		},
+		{
+			path: '/',
 			name: 'home',
-			component: () => import('./views/Home.vue')
+			component: () => import('./views/Home.vue'),
+			children: [
+				{
+					path: '/krpano',
+					name: 'krpano',
+					component: () => import('./views/Krpano.vue')
+				}
+			]
 		},
 		{
 			path: '/login',
