@@ -28,10 +28,10 @@
       <el-container>
         <el-aside width="25.6%">
           <div class="aside-left">
-            <div class="total-box" @click="isShowDia = true">
+            <popup-win :show.sync="show"></popup-win>
+            <div class="total-box" @click="open">
               <div class="title">实有人口</div>
               <div class="count syrk"></div>
-              <popup :dialogVisible="isShowDia"></popup>
             </div>
             <div class="total-box">
               <div class="title">实有车辆</div>
@@ -99,17 +99,17 @@
 </template>
 
 <script>
-import '../assets/js/count.js';
-import popup from '../components/Popup'
+import "../assets/js/count.js";
+import popupWin from "../components/PopupWin";
 
 export default {
   name: "home",
   components: {
-    popup
+    popupWin
   },
   data: function() {
     return {
-      isShowDia: false,
+      show: false,
       counts: {
         count_syrk: 666,
         count_sycl: 365,
@@ -119,26 +119,26 @@ export default {
     };
   },
   methods: {
-    log() {
-      console.log('aaa')
+    open() {
+      this.show = true;
     }
   },
   mounted() {
-    $('.total-box .count.syrk').numberRock({
-        speed: 20,
-        count: this.counts.count_syrk
+    $(".total-box .count.syrk").numberRock({
+      speed: 20,
+      count: this.counts.count_syrk
     });
-    $('.total-box .count.sycl').numberRock({
-        speed: 10,
-        count: this.counts.count_sycl
+    $(".total-box .count.sycl").numberRock({
+      speed: 10,
+      count: this.counts.count_sycl
     });
-    $('.total-box .count.syfw').numberRock({
-        speed: 10,
-        count: this.counts.count_syfw
+    $(".total-box .count.syfw").numberRock({
+      speed: 10,
+      count: this.counts.count_syfw
     });
-    $('.total-box .count.sydw').numberRock({
-        speed: 10,
-        count: this.counts.count_sydw
+    $(".total-box .count.sydw").numberRock({
+      speed: 10,
+      count: this.counts.count_sydw
     });
   }
 };
